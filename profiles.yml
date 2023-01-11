@@ -1,0 +1,14 @@
+FivetranTransformations:
+  outputs:
+
+    dev:
+      type: "postgres"
+      threads: 4
+      host: outlookaurora-instance-1.cvpunsue4mlx.us-west-2.rds.amazonaws.com
+      port: 5432
+      user: postgres
+      pass: Hearsay123
+      dbname: postgres
+      schema: aws_lambda_oulook
+
+  target: dev
