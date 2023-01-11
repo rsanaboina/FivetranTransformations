@@ -1,0 +1,20 @@
+
+version: 2
+
+source:
+  - name: emailaddress
+    databse: postgres
+    schema: aws_lambda_oulook
+    tables:
+      - name: contacts
+
+models:
+  - name: stg_dbc_contacts
+    description: The source table contains flights data from state of NY in 2013
+    
+    columns:
+      - name: email_address
+        description: This a unique flight identifier for the event
+        tests:
+          - unique
+          - not_null
