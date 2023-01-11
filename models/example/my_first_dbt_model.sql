@@ -7,18 +7,14 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='table', profile='FivetranTransformations') }}
 
-with source_data as (
-
-    select 1 as id
-    union all
-    select null as id
-
-)
-
-select *
-from source_data
+select
+    email_address,
+    surname,
+    given_name
+from
+    aws_lambda_oulook.contacts
 
 /*
     Uncomment the line below to remove records with null `id` values
